@@ -95,6 +95,8 @@ body {
     .divConnexion { 
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
         .btnCompte {
@@ -254,7 +256,7 @@ body {
 .texteConnexion {
     font-family: Questrial;
     color: rgba(255, 255, 255, 0.80);
-    font-size: 7vmin;
+    font-size: 4vmin;
     width: 70vw;
     margin: 0 auto 1.5vh;
     margin-left: auto;
@@ -262,7 +264,7 @@ body {
 }
 
 .texteConnexion span {
-    font-size: 8vmin;
+    font-size: 5vmin;
     color: rgb(255, 255, 255, 1);
 }
 
