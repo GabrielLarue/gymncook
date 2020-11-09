@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym & Cook</title>
+
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+
+    <script src="./assets/js/script.js"></script>
+</head>
+<body>
+
+    <div class="divConnexion">
+        <div class= "divChampUtil" id="divPrenom">
+            <h1 class="texteConnexion">Entrez votre <span>prenom</span></h1>
+            <input class="saisiTexteConnexion" id="champPrenom" type="text" onkeypress="afficherProchainChamp(this.id)">
+        </div>
+        <div class= "divChampUtil" id="divNom">
+            <h1 class="texteConnexion">Votre <span>nom</span></h1>
+            <input class="saisiTexteConnexion" id="champNom" type="text" readonly= "true">
+        </div>
+        <div class= "divChampUtil" id="divAge">
+            <h1 class="texteConnexion">Votre <span>age</span></h1>
+            <input class="saisiTexteConnexion" id="champAge" type="text" readonly= "true">
+        </div>
+        <div class= "divChampUtil" id="divPoids">
+            <h1 class="texteConnexion">Votre <span>poids</span></h1>
+            <input class="saisiTexteConnexion" id="champPoids" type="text" readonly= "true">
+        </div>
+        <div class= "divChampUtil" id="divTaille">
+            <h1 class="texteConnexion">Votre <span>taille</span></h1>
+            <input class="saisiTexteConnexion" id="champTaille" type="text" readonly= "true">
+        </div>
+        <div class= "divChampUtil" id="divObjectif">
+            <h1 class="texteConnexion">Vos <span>objectifs</span></h1>
+            <input class="saisiTexteConnexion" id="champObjectif" type="text" readonly= "true">
+        </div>
+    
+        <div>
+            <button id="btnAnnuler" class="btnCreationCompte">annuler</button>
+            <button id="btnContinuer" class="btnCreationCompte" onclick="continuerNom()">continuer</button>
+        </div>
+    </div>
+
+</body>
+</html>

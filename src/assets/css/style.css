@@ -1,0 +1,354 @@
+    @font-face {
+        font-family: Questrial;
+        src: url("../fonts/Questrial-Regular.ttf");
+    }
+
+    @keyframes continuer{
+        0% {
+            background-color: rgba(70, 139, 96, 0.80);
+            color: rgba(255, 255, 255, 0.80);
+        }
+        50% {
+            background-color: rgba(255, 255, 255, 0.80);
+            color: rgba(70, 139, 96, 0.80);
+        }
+        100% {
+            background-color: rgba(70, 139, 96, 0.80);
+            color: rgba(255, 255, 255, 0.80);
+        }
+    }
+
+    @keyframes continuer2{
+        0% {
+            background-color: rgba(255, 255, 255, 0.80);
+            color: rgba(70, 139, 96, 0.80);
+        }
+        50% {
+            background-color: rgba(70, 139, 96, 0.80);
+            color: rgba(255, 255, 255, 0.80);
+        }
+        100% {
+            background-color: rgba(255, 255, 255, 0.80);
+            color: rgba(70, 139, 96, 0.80);
+        }
+    }
+    
+    @keyframes annuler{
+        0% {
+            background-color:rgba(255, 255, 255, 0.80);
+            color: rgba(139, 70, 70, 0.80);
+        }
+        50% {
+            background-color: rgba(139, 70, 70, 0.80);
+            color: rgba(255, 255, 255, 0.80);
+        }
+        100% {
+            background-color: rgba(255, 255, 255, 0.80);
+            color: rgba(139, 70, 70, 0.80);
+        }
+    }
+
+body {
+    margin: 0;
+    background-image: url("../images/nutritionBackground.jpg");
+    background-repeat: no-repeat;
+    background-position-x: center; 
+    background-size: auto 100vh;
+    height: 100vh;
+    flex-direction: column;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+    .divTexte {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-radius: 2.5vh;
+        height: 5vh;
+        width: 60vmin;
+        background-color: rgba(255, 255, 255, 0.80);
+    }
+
+        .divTexte:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+    .iconCompte {
+        margin-left: 5vmin;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+        width: 10vh;
+        border-radius: 5vh;
+        background-color: rgba(255, 255, 255, 0.80);
+    }
+
+        .iconCompte:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+    .divConnexion { 
+        display: flex;
+        flex-direction: column;
+    }
+
+        .btnCompte {
+            height: 15vmin;
+            width: 40vmin;
+            margin: 1vmin;
+            border: none;
+            border-radius: 7.5vmin;
+            opacity: .85;
+            font-family: Questrial;
+            font-size: 5vmin;
+        }
+
+        .btnCompte:focus{
+            outline: none;
+        }
+
+        #btnConnexion {
+            background-color: #468B60;
+            color: rgba(255, 255, 255, 0.80);
+        }
+
+        #btnConnexion:focus {
+            animation: continuer 300ms;
+        }
+
+        #btnInscription {
+            background-color: white;
+            color: rgba(70, 139, 96, 0.80);
+        }
+
+        #btnInscription:focus {
+            animation: continuer2 300ms;
+        }
+
+    .divNavigationHaut {
+        display: flex;
+        width: 80vmin;
+        justify-content: flex-end;
+        align-items: center;
+        position: absolute;
+        top: 5vh;
+        font-family: Questrial;
+        font-size: 2.5vh;
+        color: rgba(255, 255, 255, 0.50);
+    }
+
+        .divTexte i {
+            margin: 0;
+            margin-left: 2vmin;
+            color: #468B60;
+            opacity: 0.8;
+        }
+
+        #texteUtilisateurRecherche {
+            background: transparent;
+            color: rgba(70, 139, 96, 0.80);
+            border: none;
+            width: 80%;
+            height: 80%;
+            font-size: 2.5vh;
+            outline: none;
+            padding-left: 3vmin;
+        }
+
+        .iconCompte i {
+            color: #468B60;
+            opacity: 0.8;
+            font-size: 3.5vh;
+        }
+
+
+    .divListe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 70vh;
+        width: 100%;
+        margin-top: 5vmin;
+        overflow: scroll;
+    }
+
+        .carteListe {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 15vh;
+            min-height: 15vh;
+            width: 80vmin;
+            margin: 2vmin;
+            border: none;
+            border-radius: 7.5vh;
+            font-family: Questrial;
+            font-size: 3vh;
+            background-color: rgba(255, 255, 255, 0.8);
+            transition-duration: 400ms;
+        }
+
+            .carteListe:hover {
+                background-color: rgba(255, 255, 255, 1);
+            }
+
+            .iconImage {
+                margin-left: 1vh;
+                border: none;
+                height: 13vh;
+                width: 13vh;
+                border-radius: 7vh;
+            }
+
+            .nomDetailRecette {
+                color: #468B60;
+                font-size: 4vmin;
+                margin-left: 5vmin;
+                opacity: 0.8;
+            }
+
+                .nomDetailRecette p {
+                    margin: 0;
+                }
+
+                .detailRecette {
+                    font-size: 2vh;
+                    display: flex;
+                    flex-direction: row;
+                    opacity: 0.7;
+                }
+
+                    .detailRecette p {
+                        margin-right: 2vmin;
+                    }
+
+    .divNavigation {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        position: absolute;
+        bottom: 3vmin;
+        font-family: Questrial;
+        font-size: 3vh;
+        color: rgba(255, 255, 255, 0.50);
+    }
+
+        .btnNav {
+            border: none;
+            background: transparent;
+            font-size: 3vmin;
+            color: rgba(255, 255, 255, 0.50);
+        }
+
+            .btnNav:focus {
+                outline: none;
+            }
+
+
+
+.texteConnexion {
+    font-family: Questrial;
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 7vmin;
+    width: 70vw;
+    margin: 0 auto 1.5vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.texteConnexion span {
+    font-size: 8vmin;
+    color: rgb(255, 255, 255, 1);
+}
+
+.saisiTexteConnexion {
+    padding-left: 5vw;
+    padding-right: 5vw;
+    margin: 0 0 2.5vh;
+    height: 5vh;
+    border-radius: 3.5vh;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.80);
+    
+    font-size: 4vmin;
+    color: rgba(70, 139, 96, 0.80);
+}
+
+.saisiTexteConnexion:focus {
+    outline: none;
+
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.divConnexion div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnCreationCompte {
+    font-size: 5vmin;
+    margin: 4vh 5vw 0;
+    width: 30vw;
+    height: 7vh;
+    border-radius: 3.5vh;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.80);
+}
+
+.btnCreationCompte:focus {
+    outline: none;
+}
+
+#btnContinuer {
+    color: rgba(255, 255, 255, 0.80);
+    background-color: rgba(70, 139, 96, 0.80);
+}
+
+#btnContinuer:focus {
+    animation: continuer 300ms;
+}
+
+#btnAnnuler {
+    color: rgba(255, 255, 255, 0.80);
+    color: rgba(139, 70, 70, 0.80);
+}
+
+#btnAnnuler:focus {
+    animation: annuler 300ms;
+}
+
+#divNom {
+    opacity: 0;
+}
+
+#divAge {
+    opacity: 0;
+}
+
+#divPoids {
+    opacity: 0;
+}
+
+#divTaille {
+    opacity: 0;
+}
+
+#divObjectif {
+    opacity: 0;
+}
+
+.divChampUtil {
+    display: flex;
+    flex-direction: column;
+    transition-duration: 300ms;
+}
+
+.divChampUtil input {
+    width: 70vw;
+}
