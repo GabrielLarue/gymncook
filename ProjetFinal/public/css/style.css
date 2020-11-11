@@ -2,8 +2,8 @@
         font-family: Questrial;
         src: url("../fonts/Questrial-Regular.ttf");
     }
-
-    @keyframes continuer{
+    
+    @keyframes continuer {
         0% {
             background-color: rgba(70, 139, 96, 0.80);
             color: rgba(255, 255, 255, 0.80);
@@ -17,8 +17,8 @@
             color: rgba(255, 255, 255, 0.80);
         }
     }
-
-    @keyframes continuer2{
+    
+    @keyframes continuer2 {
         0% {
             background-color: rgba(255, 255, 255, 0.80);
             color: rgba(70, 139, 96, 0.80);
@@ -33,9 +33,9 @@
         }
     }
     
-    @keyframes annuler{
+    @keyframes annuler {
         0% {
-            background-color:rgba(255, 255, 255, 0.80);
+            background-color: rgba(255, 255, 255, 0.80);
             color: rgba(139, 70, 70, 0.80);
         }
         50% {
@@ -47,32 +47,32 @@
             color: rgba(139, 70, 70, 0.80);
         }
     }
-
-body {
-    margin: 0;
-    height: 100vh;
-    flex-direction: column;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-}
-
-#bodyRecette {
-    background-image: url("../img/nutritionBackground.jpg");
-    background-repeat: no-repeat;
-    background-position-x: center; 
-    background-size: auto 100vh;
-}
-
-    form{
+    
+    body {
+        margin: 0;
+        height: 100vh;
+        flex-direction: column;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+    }
+    
+    #bodyRecette {
+        background-image: url("../img/nutritionBackground.jpg");
+        background-repeat: no-repeat;
+        background-position-x: center;
+        background-size: auto 100vh;
+    }
+    
+    form {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
     }
-
+    
     .divTexte {
         display: flex;
         justify-content: flex-start;
@@ -82,11 +82,11 @@ body {
         width: 60vmin;
         background-color: rgba(255, 255, 255, 0.80);
     }
-
-        .divTexte:hover {
-            background-color: rgba(255, 255, 255, 1);
-        }
-
+    
+    .divTexte:hover {
+        background-color: rgba(255, 255, 255, 1);
+    }
+    
     .iconCompte {
         margin-left: 5vmin;
         display: flex;
@@ -97,51 +97,56 @@ body {
         border-radius: 5vh;
         background-color: rgba(255, 255, 255, 0.80);
     }
-
-        .iconCompte:hover {
-            background-color: rgba(255, 255, 255, 1);
-        }
-
-    .divConnexion { 
+    
+    .iconCompte:hover {
+        background-color: rgba(255, 255, 255, 1);
+    }
+    
+    .divConnexion {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-
-        .btnCompte {
-            height: 15vmin;
-            width: 40vmin;
-            margin: 1vmin;
-            border: none;
-            border-radius: 7.5vmin;
-            opacity: .85;
-            font-family: Questrial;
-            font-size: 5vmin;
-        }
-
-        .btnCompte:focus{
-            outline: none;
-        }
-
-        #btnConnexion {
-            background-color: #468B60;
-            color: rgba(255, 255, 255, 0.80);
-        }
-
-        #btnConnexion:focus {
-            animation: continuer 300ms;
-        }
-
-        #btnInscription {
-            background-color: white;
-            color: rgba(70, 139, 96, 0.80);
-        }
-
-        #btnInscription:focus {
-            animation: continuer2 300ms;
-        }
-
+    /*ajout du nom de l'utilisateur*/
+    
+    #membreConnecte {
+        font-size: 25px;
+    }
+    
+    .btnCompte {
+        height: 15vmin;
+        width: 40vmin;
+        margin: 1vmin;
+        border: none;
+        border-radius: 7.5vmin;
+        opacity: .85;
+        font-family: Questrial;
+        font-size: 5vmin;
+    }
+    
+    .btnCompte:focus {
+        outline: none;
+    }
+    
+    #btnConnexion {
+        background-color: #468B60;
+        color: rgba(255, 255, 255, 0.80);
+    }
+    
+    #btnConnexion:focus {
+        animation: continuer 300ms;
+    }
+    
+    #btnInscription {
+        background-color: white;
+        color: rgba(70, 139, 96, 0.80);
+    }
+    
+    #btnInscription:focus {
+        animation: continuer2 300ms;
+    }
+    
     .divNavigationHaut {
         display: flex;
         width: 80vmin;
@@ -153,32 +158,31 @@ body {
         font-size: 2.5vh;
         color: rgba(255, 255, 255, 0.50);
     }
-
-        .divTexte i {
-            margin: 0;
-            margin-left: 2vmin;
-            color: #468B60;
-            opacity: 0.8;
-        }
-
-        #texteUtilisateurRecherche {
-            background: transparent;
-            color: rgba(70, 139, 96, 0.80);
-            border: none;
-            width: 80%;
-            height: 80%;
-            font-size: 2.5vh;
-            outline: none;
-            padding-left: 3vmin;
-        }
-
-        .iconCompte i {
-            color: #468B60;
-            opacity: 0.8;
-            font-size: 3.5vh;
-        }
-
-
+    
+    .divTexte i {
+        margin: 0;
+        margin-left: 2vmin;
+        color: #468B60;
+        opacity: 0.8;
+    }
+    
+    #texteUtilisateurRecherche {
+        background: transparent;
+        color: rgba(70, 139, 96, 0.80);
+        border: none;
+        width: 80%;
+        height: 80%;
+        font-size: 2.5vh;
+        outline: none;
+        padding-left: 3vmin;
+    }
+    
+    .iconCompte i {
+        color: #468B60;
+        opacity: 0.8;
+        font-size: 3.5vh;
+    }
+    
     .divListe {
         display: flex;
         flex-direction: column;
@@ -188,57 +192,57 @@ body {
         margin-top: 5vmin;
         overflow: scroll;
     }
-
-        .carteListe {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            height: 15vh;
-            min-height: 15vh;
-            width: 80vmin;
-            margin: 2vmin;
-            border: none;
-            border-radius: 7.5vh;
-            font-family: Questrial;
-            font-size: 3vh;
-            background-color: rgba(255, 255, 255, 0.8);
-            transition-duration: 400ms;
-        }
-
-            .carteListe:hover {
-                background-color: rgba(255, 255, 255, 1);
-            }
-
-            .iconImage {
-                margin-left: 1vh;
-                border: none;
-                height: 13vh;
-                width: 13vh;
-                border-radius: 7vh;
-            }
-
-            .nomDetailRecette {
-                color: #468B60;
-                font-size: 4vmin;
-                margin-left: 5vmin;
-                opacity: 0.8;
-            }
-
-                .nomDetailRecette p {
-                    margin: 0;
-                }
-
-                .detailRecette {
-                    font-size: 2vh;
-                    display: flex;
-                    flex-direction: row;
-                    opacity: 0.7;
-                }
-
-                    .detailRecette p {
-                        margin-right: 2vmin;
-                    }
-
+    
+    .carteListe {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 15vh;
+        min-height: 15vh;
+        width: 80vmin;
+        margin: 2vmin;
+        border: none;
+        border-radius: 7.5vh;
+        font-family: Questrial;
+        font-size: 3vh;
+        background-color: rgba(255, 255, 255, 0.8);
+        transition-duration: 400ms;
+    }
+    
+    .carteListe:hover {
+        background-color: rgba(255, 255, 255, 1);
+    }
+    
+    .iconImage {
+        margin-left: 1vh;
+        border: none;
+        height: 13vh;
+        width: 13vh;
+        border-radius: 7vh;
+    }
+    
+    .nomDetailRecette {
+        color: #468B60;
+        font-size: 4vmin;
+        margin-left: 5vmin;
+        opacity: 0.8;
+    }
+    
+    .nomDetailRecette p {
+        margin: 0;
+    }
+    
+    .detailRecette {
+        font-size: 2vh;
+        display: flex;
+        flex-direction: row;
+        opacity: 0.7;
+    }
+    
+    .detailRecette p {
+        margin-right: 2vmin;
+    }
+    
     .divNavigation {
         display: flex;
         width: 100%;
@@ -249,179 +253,174 @@ body {
         font-size: 3vh;
         color: rgba(255, 255, 255, 0.50);
     }
-
+    
     .divNavigation a {
         text-decoration: none;
         color: rgba(255, 255, 255, 0.5);
     }
-
-        .btnNav {
-            border: none;
-            background: transparent;
-            font-size: 3vmin;
-            color: rgba(255, 255, 255, 0.50);
-        }
-
-            .btnNav:focus {
-                outline: none;
-            }
-
-.divConnexion .divFlexColumn {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-}
-
-.divConnexion .carteRecette {
-    background-color: rgba(255, 255, 255, 0.75);
-    padding: 3vh;
-    border-radius: 5vh;
-    margin: 0vh 3vh;
-    margin-top: -6vh;
-
-    height: 75vh;
-}
-
-.divConnexion .carteRecette .boiteDeroulante {
-    flex-direction: column;
-    height: 70vh;
-    overflow-y: scroll;
-}
-
-.divConnexion .headerRecette {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-
-    margin-top: 8vh;
-    color: rgb(70, 139, 96);
-    font-family: Questrial;
-    font-size: 1.5vh;
-}
-
-.divConnexion .bodyRecette {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-
-    color: rgb(70, 139, 96);
-    font-family: Questrial;
-    padding: 2vw;
-    font-size: 2vh;
-}
-
-.divConnexion .carteRecette {
-    display: flex;
-    flex-direction: column;
-}
-
-.headerRecette h1 {
-    margin-left: 2vw;
-    margin-bottom: 0;
-    font-size: 4vh;
-}
-
-.headerRecette h3 {
-    margin: 0vw 1vw;
-    opacity: .8;
-    font-size: 2vh;
-}
-
-.texteConnexion {
-    font-family: Questrial;
-    color: rgba(255, 255, 255, 0.80);
-    font-size: 4vmin;
-    width: 70vw;
-    margin: 0 auto 1.5vh;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.texteConnexion span {
-    font-size: 5vmin;
-    color: rgb(255, 255, 255, 1);
-}
-
-.saisiTexteConnexion {
-    padding-left: 5vw;
-    padding-right: 5vw;
-    margin: 0 0 2.5vh;
-    height: 5vh;
-    border-radius: 3.5vh;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.80);
     
-    font-size: 4vmin;
-    color: rgba(70, 139, 96, 0.80);
-}
-
-.saisiTexteConnexion:focus {
-    outline: none;
-
-    background-color: rgba(255, 255, 255, 1);
-}
-
-.divConnexion div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btnCreationCompte {
-    font-size: 5vmin;
-    margin: 4vh 5vw 0;
-    width: 30vw;
-    height: 7vh;
-    border-radius: 3.5vh;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.80);
-}
-
-.btnCreationCompte:focus {
-    outline: none;
-}
-
-#btnContinuer {
-    color: rgba(255, 255, 255, 0.80);
-    background-color: rgba(70, 139, 96, 0.80);
-}
-
+    .btnNav {
+        border: none;
+        background: transparent;
+        font-size: 3vmin;
+        color: rgba(255, 255, 255, 0.50);
+    }
+    
+    .btnNav:focus {
+        outline: none;
+    }
+    
+    .divConnexion .divFlexColumn {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    
+    .divConnexion .carteRecette {
+        background-color: rgba(255, 255, 255, 0.75);
+        padding: 3vh;
+        border-radius: 5vh;
+        margin: 0vh 3vh;
+        margin-top: -6vh;
+        height: 75vh;
+    }
+    
+    .divConnexion .carteRecette .boiteDeroulante {
+        flex-direction: column;
+        height: 70vh;
+        overflow-y: scroll;
+    }
+    
+    .divConnexion .headerRecette {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-top: 8vh;
+        color: rgb(70, 139, 96);
+        font-family: Questrial;
+        font-size: 1.5vh;
+    }
+    
+    .divConnexion .bodyRecette {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        color: rgb(70, 139, 96);
+        font-family: Questrial;
+        padding: 2vw;
+        font-size: 2vh;
+    }
+    
+    .divConnexion .carteRecette {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .headerRecette h1 {
+        margin-left: 2vw;
+        margin-bottom: 0;
+        font-size: 4vh;
+    }
+    
+    .headerRecette h3 {
+        margin: 0vw 1vw;
+        opacity: .8;
+        font-size: 2vh;
+    }
+    
+    .texteConnexion {
+        font-family: Questrial;
+        color: rgba(255, 255, 255, 0.80);
+        font-size: 4vmin;
+        width: 70vw;
+        margin: 0 auto 1.5vh;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .texteConnexion span {
+        font-size: 5vmin;
+        color: rgb(255, 255, 255, 1);
+    }
+    
+    .saisiTexteConnexion {
+        padding-left: 5vw;
+        padding-right: 5vw;
+        margin: 0 0 2.5vh;
+        height: 5vh;
+        border-radius: 3.5vh;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.80);
+        font-size: 4vmin;
+        color: rgba(70, 139, 96, 0.80);
+    }
+    
+    .saisiTexteConnexion:focus {
+        outline: none;
+        background-color: rgba(255, 255, 255, 1);
+    }
+    
+    .divConnexion div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .btnCreationCompte {
+        font-size: 5vmin;
+        margin: 4vh 5vw 0;
+        width: 30vw;
+        height: 7vh;
+        border-radius: 3.5vh;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.80);
+    }
+    
+    .btnCreationCompte:focus {
+        outline: none;
+    }
+    
+    #btnContinuer {
+        color: rgba(255, 255, 255, 0.80);
+        background-color: rgba(70, 139, 96, 0.80);
+    }
+    
     form #btnContinuer {
         background-color: rgba(255, 255, 255, 0.5);
     }
-
-#btnContinuer:focus {
-    animation: continuer 300ms;
-}
-
-#btnAnnuler {
-    color: rgba(255, 255, 255, 0.80);
-    color: rgba(139, 70, 70, 0.80);
-}
-
-#btnAnnuler:focus {
-    animation: annuler 300ms;
-}
-
-#divCourriel {
-    opacity: 0;
-}
-
-#divAge {
-    opacity: 0;
-}
-
-#divMotDePasse {
-    opacity: 0;
-}
-
-.divChampUtil {
-    display: flex;
-    flex-direction: column;
-    transition-duration: 300ms;
-}
-
-.divChampUtil input {
-    width: 70vw;
-}
+    
+    #btnContinuer:focus {
+        animation: continuer 300ms;
+    }
+    
+    #btnAnnuler {
+        color: rgba(255, 255, 255, 0.80);
+        color: rgba(139, 70, 70, 0.80);
+    }
+    
+    #btnAnnuler:focus {
+        animation: annuler 300ms;
+    }
+    
+    #divCourriel {
+        opacity: 0;
+    }
+    
+    #divAge {
+        opacity: 0;
+    }
+    
+    #divMotDePasse {
+        opacity: 0;
+    }
+    
+    .divChampUtil {
+        display: flex;
+        flex-direction: column;
+        transition-duration: 300ms;
+    }
+    
+    .divChampUtil input {
+        width: 70vw;
+    }
