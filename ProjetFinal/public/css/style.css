@@ -66,6 +66,12 @@ body {
     background-size: auto 100vh;
 }
 
+    #formNavigation {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+
     form{
         display: flex;
         justify-content: center;
@@ -388,7 +394,7 @@ body {
 }
 
     form #btnContinuer {
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(70, 139, 96, 0.80);
     }
 
 #btnContinuer:focus {
@@ -404,17 +410,6 @@ body {
     animation: annuler 300ms;
 }
 
-#divCourriel {
-    opacity: 0;
-}
-
-#divAge {
-    opacity: 0;
-}
-
-#divMotDePasse {
-    opacity: 0;
-}
 
 .divChampUtil {
     display: flex;
