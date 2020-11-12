@@ -424,3 +424,49 @@
     .divChampUtil input {
         width: 70vw;
     }
+    /*modifications Cyrielle*/
+    
+    .divFormulaire div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .divFormulaire {
+        height: 600px;
+        overflow-y: scroll;
+    }
+    
+    .divChampFormulaire {
+        display: flex;
+    }
+    
+    .divChampUtil input {
+        width: 70vw;
+    }
+    
+    #zipCode {
+        width: 30%;
+    }
+    
+    #ville {
+        width: 30%;
+    }
+    
+    #province {
+        width: 30%;
+    }
+    
+    #pays {
+        width: 30%;
+    }
+    
+    #btnSupprimer {
+        color: rgba(255, 255, 255, 0.80);
+        color: rgba(139, 70, 70, 0.80);
+    }
+    
+    #btnModifier {
+        color: rgba(255, 255, 255, 0.80);
+        background-color: rgba(70, 139, 96, 0.80);
+    }
