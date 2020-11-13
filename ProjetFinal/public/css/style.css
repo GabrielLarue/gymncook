@@ -47,26 +47,32 @@
             color: rgba(139, 70, 70, 0.80);
         }
     }
-    
-    body {
-        margin: 0;
-        height: 100vh;
-        flex-direction: column;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        align-items: center;
-        background-color: black;
+
+body {
+    margin: 0;
+    height: 100vh;
+    flex-direction: column;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+#bodyRecette {
+    background-image: url("../img/nutritionBackground.jpg");
+    background-repeat: no-repeat;
+    background-position-x: center; 
+    background-size: auto 100vh;
+}
+
+    #formNavigation {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
     }
-    
-    #bodyRecette {
-        background-image: url("../img/nutritionBackground.jpg");
-        background-repeat: no-repeat;
-        background-position-x: center;
-        background-size: auto 100vh;
-    }
-    
-    form {
+
+    form{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -387,7 +393,7 @@
     }
     
     form #btnContinuer {
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(70, 139, 96, 0.80);
     }
     
     #btnContinuer:focus {
@@ -424,8 +430,7 @@
     .divChampUtil input {
         width: 70vw;
     }
-    /*modifications Cyrielle*/
-    
+
     .divFormulaire div {
         display: flex;
         align-items: center;
