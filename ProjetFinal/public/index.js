@@ -211,7 +211,7 @@ function connexion(url) {
       document.getElementById("voirHtml").innerHTML = compte; }); }
 
 
-  fetch(`http://localhost:4200/home`, {
+  fetch(`http://localhost:4200/informationMembre`, {
         method: 'GET'
     })
   .then(reponse => reponse.text())
@@ -267,7 +267,7 @@ function profilMembre(url) {
         return reponse.text();  }) 
         .then(function(profil){  
     
-        fetch(`http://localhost:4200/home`, {
+        fetch(`http://localhost:4200/informationMembre`, {
             method: 'GET'
         })
       .then(reponse => reponse.text())
