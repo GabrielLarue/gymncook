@@ -425,12 +425,12 @@ app.post('/auth', function (req, res, next) {
 app.get('/home', function(req, res) {  
         if (req.session.loggedin) {   
             console.log("Bienvenue , " + req.session.prenom + " " + req.session.nom + " !")
-            return res.redirect("/home93e8.html")
+            res.send (
+            req.query._id = req.session._id 
+            );
         } 
-        else { 
-            return res.redirect("/index.html")
-        }
-}); 
+        else { res.send("Pour voir cette page, il faut être connecté");}  
+        res.end(); }); 
 
 app.get('/logout', function (req, res) {
         req.session.loggedin = false; 
