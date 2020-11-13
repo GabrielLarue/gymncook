@@ -424,3 +424,63 @@
     .divChampUtil input {
         width: 70vw;
     }
+    /*modifications Cyrielle*/
+    
+    .divFormulaire div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .divFormulaire {
+        height: 600px;
+        overflow-y: scroll;
+    }
+    
+    .divChampFormulaire {
+        display: flex;
+    }
+    
+    #zipCode {
+        width: 30%;
+    }
+    
+    #ville {
+        width: 30%;
+    }
+    
+    #province {
+        width: 30%;
+    }
+    
+    #pays {
+        width: 30%;
+    }
+    
+    #btnSupprimer {
+        color: rgba(255, 255, 255, 0.80);
+        color: rgba(139, 70, 70, 0.80);
+    }
+    
+    #btnModifier {
+        color: rgba(255, 255, 255, 0.80);
+        background-color: rgba(70, 139, 96, 0.80);
+    }
+    
+    @media (min-width: 1000px) {
+        .divFormulaire {
+            height: 900px;
+        }
+        #zipCode {
+            width: 50%;
+        }
+        #ville {
+            width: 50%;
+        }
+        #province {
+            width: 50%;
+        }
+        #pays {
+            width: 50%;
+        }
+    }
