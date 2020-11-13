@@ -10,91 +10,27 @@
     <script src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/81c5aee0d0.js" crossorigin="anonymous"></script>
 </head>
-<body id="bodyRecette">
+<body id="bodyRecette" onload="recupererRecettes()">
 
     <div class="divNavigationHaut">
         <div class="divTexte">
             <i class="fas fa-search"></i>
-            <input id="texteUtilisateurRecherche" type="text">
+            <input id="texteUtilisateurRecherche" type="text" onkeyup="rechercherSelection()">
         </div>
         <div class="iconCompte">
             <i class="fas fa-user"></i>
         </div>
     </div>
 
-    <div class="divListe">
-        <div class="carteListe">
-            <img class="iconImage" src= "img/recette.jpg">
-            <div class="nomDetailRecette">
-                <p>Recette<p>
-                <div class="detailRecette">
-                    <p>portions</p>
-                    <p>prix</p>
-                    <p>temps</p>    
-                </div>
-            </div>
-        </div>
-        <div class="carteListe">
-            <img class="iconImage" src= "img/recette2.jpg">
-            <div class="nomDetailRecette">
-                <p>Recette<p>
-                <div class="detailRecette">
-                    <p>portions</p>
-                    <p>prix</p>
-                    <p>temps</p>    
-                </div>
-            </div>
-        </div>
-        <div class="carteListe">
-            <img class="iconImage" src= "img/recette3.jpg">
-            <div class="nomDetailRecette">
-                <p>Recette<p>
-                <div class="detailRecette">
-                    <p>portions</p>
-                    <p>prix</p>
-                    <p>temps</p>    
-                </div>
-            </div>
-        </div>
-        <div class="carteListe">
-            <img class="iconImage" src= "img/recette4.jpg">
-            <div class="nomDetailRecette">
-                <p>Recette<p>
-                <div class="detailRecette">
-                    <p>portions</p>
-                    <p>prix</p>
-                    <p>temps</p>    
-                </div>
-            </div>
-        </div>
-        <div class="carteListe">
-            <img class="iconImage" src= "img/recette.jpg">
-            <div class="nomDetailRecette">
-                <p>Recette<p>
-                <div class="detailRecette">
-                    <p>portions</p>
-                    <p>prix</p>
-                    <p>temps</p>    
-                </div>
-            </div>
-        </div>
-        <div class="carteListe">
-            <img class="iconImage" src= "img/recette2.jpg">
-            <div class="nomDetailRecette">
-                <p>Recette<p>
-                <div class="detailRecette">
-                    <p>portions</p>
-                    <p>prix</p>
-                    <p>temps</p>    
-                </div>
-            </div>
-        </div>
+    <div id="divListeRecette" class="divListe">
     </div>
     
     <div class="divNavigation">
-        <form>
+        <form action='/home' method="get">
             <button class="btnNav">&#9664</button>
+        </form>
             <p id="navigationRecettesPub">Nos recettes</p>
+        <form action='/pageExercices' method="get">
             <button class="btnNav" onclick>&#9654</button>
         </form>
     </div>
