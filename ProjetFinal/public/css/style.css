@@ -441,10 +441,6 @@
         display: flex;
     }
     
-    .divChampUtil input {
-        width: 70vw;
-    }
-    
     #zipCode {
         width: 30%;
     }
@@ -469,4 +465,22 @@
     #btnModifier {
         color: rgba(255, 255, 255, 0.80);
         background-color: rgba(70, 139, 96, 0.80);
+    }
+    
+    @media (min-width: 1000px) {
+        .divFormulaire {
+            height: 900px;
+        }
+        #zipCode {
+            width: 50%;
+        }
+        #ville {
+            width: 50%;
+        }
+        #province {
+            width: 50%;
+        }
+        #pays {
+            width: 50%;
+        }
     }
