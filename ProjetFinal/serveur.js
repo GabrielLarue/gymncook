@@ -421,7 +421,16 @@ app.post('/auth', function (req, res, next) {
         });
      });
 
-     
+app.get('/informationMembre', function(req, res) {  
+    if (req.session.loggedin) {   
+        console.log("Bienvenue , " + req.session.prenom + " " + req.session.nom + " !")
+        res.send (
+        req.query._id = req.session._id 
+        );
+    } 
+    else { res.send("Pour voir cette page, il faut être connecté");}  
+    res.end(); }); 
+
 app.get('/home', function(req, res) {  
         if (req.session.loggedin) {   
             console.log("Bienvenue , " + req.session.prenom + " " + req.session.nom + " !")
