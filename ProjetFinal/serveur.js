@@ -1,7 +1,16 @@
 const express = require('express'); 
 const bodyParser=require("body-parser"); 
 const mongoose = require("mongoose"); 
-const session = require('express-session'); 
+const session = require('express-session');
+const methodOverride = require('method-override');
+const config = require('./config');
+const multer = require('multer');
+const GridFsStorage = require('multer-gridfs-storage');
+const crypto = require('crypto');
+const path = require('path');
+
+
+const imageRouter = require('./routes/image');
 
 
 const app = express(); 
@@ -10,6 +19,8 @@ const port = 4200;
 app.use(bodyParser.json()); 
 app.use(express.static('public')); 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({  secret: 'secret',  
 resave: true,  saveUninitialized: true })); 
@@ -20,15 +31,42 @@ response.setHeader("Access-Control-Allow-Headers", "Origin, X-RequestedWith, Con
 response.setHeader('Access-Control-Allow-Credentials', true); next(); }); 
 
 app.use(express.json()); 
- 
-mongoose.connect('mongodb+srv://admin:admin1234@clustergym.noibn.mongodb.net/GymNCook?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }); 
+
+const url = config.mongoURI;
+
+mongoose.connect(url , { useUnifiedTopology: true, useNewUrlParser: true });
 let db=mongoose.connection; 
 db.on('error', console.log.bind(console, "Echec de connexion à la BD Mongo...")); 
 
 db.once('open', function(callback){ 
     console.log("Connecté à la BD Mongo..."); 
-}) 
+})
 
+// Creation du moteur de stockage
+const storage = new GridFsStorage({
+    url: config.mongoURI,
+    file: (req, file) => {
+        return new Promise((resolve, reject) => {
+            crypto.randomBytes(16, (err, buf) => {
+                if (err) {
+                    return reject(err);
+                }
+                const filename = buf.toString('hex') + path.extname(file.originalname);
+                const fileInfo = {
+                    filename: filename,
+                    bucketName: 'uploads'
+                };
+                resolve(fileInfo);
+            });
+        });
+    }
+});
+
+const upload = multer({ storage });
+
+app.use('/', imageRouter(upload));
+
+//Modèles
 const membreSchema = new mongoose.Schema({  
     username: {
         type: String 
@@ -239,7 +277,7 @@ app.post('/entraineur', function(request,response){
             if (err) throw err; 
             console.log("Enregistrement avec succès");       
         }); 
-            return response.redirect('/admin5fb8.html'); 
+            return response.redirect('/admin.html'); 
     }) 
     
 
@@ -364,7 +402,7 @@ app.post('/nutritionniste', function(request,response){
             if (err) throw err; 
             console.log("Enregistrement avec succès");       
         }); 
-            return response.redirect('/admin5fb8.html'); 
+            return response.redirect('/admin.html'); 
     }) 
     
 
@@ -417,42 +455,27 @@ app.post('/auth', function (req, res, next) {
            req.session._id = user._id
            req.session.prenom = user.prenom
            req.session.nom = user.nom
-           return res.redirect("/home93e8.html");
+           return res.redirect("/home.html");
         });
      });
 
-app.get('/informationMembre', function(req, res) {  
-    if (req.session.loggedin) {   
-        console.log("Bienvenue , " + req.session.prenom + " " + req.session.nom + " !")
-        res.send (
-        req.query._id = req.session._id 
-        );
-    } 
-    else { res.send("Pour voir cette page, il faut être connecté");}  
-    res.end(); }); 
-
+     
 app.get('/home', function(req, res) {  
         if (req.session.loggedin) {   
             console.log("Bienvenue , " + req.session.prenom + " " + req.session.nom + " !")
-            return res.redirect("/home93e8.html")
+            res.send (
+            req.query._id = req.session._id 
+            );
         } 
-        else { 
-            return res.redirect("/index.html")
-        }
-}); 
+        else { res.send("Pour voir cette page, il faut être connecté");}  
+        res.end(); }); 
 
 app.get('/logout', function (req, res) {
         req.session.loggedin = false; 
         res.redirect("/index.html");
     });
 
-app.get('/pageRecettes', function (req, res) {
-    return res.redirect("/recettes.html");
-});
 
-app.get('/pageExercices', function (req, res) {
-    return res.redirect("/exercices.html");
-});
 
 const adminSchema = new mongoose.Schema({  
         username: {
@@ -594,7 +617,7 @@ app.post('/adminAuth', function (req, res, next) {
             req.session._id = user._id
             req.session.prenom = user.prenom
             req.session.nom = user.nom
-            return res.redirect("/admin5fb8.html");
+            return res.redirect("/admin.html");
           });
        });
   
@@ -624,7 +647,7 @@ app.post('/entraineurAuth', function (req, res, next) {
                     req.session._id = user._id
                     req.session.prenom = user.prenom
                     req.session.nom = user.nom
-                    return res.redirect("/entraineurd0df.html");
+                    return res.redirect("/entraineur.html");
                   });
                });
           
@@ -654,7 +677,7 @@ app.post('/nutrionnisteAuth', function (req, res, next) {
                     req.session._id = user._id
                     req.session.prenom = user.prenom
                     req.session.nom = user.nom
-                    return res.redirect("/nutritionnisteA798.html");
+                    return res.redirect("/nutritionniste.html");
                 });
         });
 
@@ -787,7 +810,7 @@ const exerciceSchema = new mongoose.Schema({
     
 const exerciceModel = mongoose.model("exercice", exerciceSchema); 
     
-    // Ajouter un enregistrement dans la DB (CREATE)
+    // Ajouter un enregistrement dans la BD (CREATE)
     app.post('/exercice', function(request,response){ 
         let categorie = request.body.categorie;
         let nom = request.body.nom;
@@ -811,10 +834,10 @@ const exerciceModel = mongoose.model("exercice", exerciceSchema);
             if (err) throw err; 
             console.log("Enregistrement avec succès");       
         }); 
-            return response.redirect("/entraineurd0df.html"); 
+            return response.redirect("/entraineur.html"); 
     }) 
     
-    // Obtenir la liste des enregistrement contenu dans la DB (READ) 
+    // Obtenir la liste des enregistrement contenu dans la BD (READ) 
     app.get('/exercices', async (request, response) => {
         console.log("Route GET /exercices");
         try {
@@ -826,7 +849,7 @@ const exerciceModel = mongoose.model("exercice", exerciceSchema);
                     }
             });           
     
-    // Obtenir un enregistrement en particulier dans la DB (READ) 
+    // Obtenir un enregistrement en particulier dans la BD (READ) 
     app.get("/exercice/:id", async (request, response) => {     
         console.log("Route GET /exercice/:id");     
         try {         
@@ -891,7 +914,7 @@ const exerciceModel = mongoose.model("exercice", exerciceSchema);
         
     const recetteModel = mongoose.model("recette", recetteSchema); 
         
-        // Ajouter un enregistrement dans la DB (CREATE)
+        // Ajouter un enregistrement dans la BD (CREATE)
         app.post('/recette', function(request,response){ 
             let categorie = request.body.categorie;
             let nom = request.body.nom;
@@ -915,10 +938,10 @@ const exerciceModel = mongoose.model("exercice", exerciceSchema);
                 if (err) throw err; 
                 console.log("Enregistrement avec succès");       
             }); 
-                return response.redirect('/nutritionnisteA798.html'); 
+                return response.redirect('/nutritionniste.html'); 
         }) 
         
-        // Obtenir la liste des enregistrement contenu dans la DB (READ) 
+        // Obtenir la liste des enregistrement contenu dans la BD (READ) 
         app.get('/recettes', async (request, response) => {
             console.log("Route GET /recettes");
             try {
@@ -930,7 +953,7 @@ const exerciceModel = mongoose.model("exercice", exerciceSchema);
                         }
                 });           
         
-        // Obtenir un enregistrement en particulier dans la DB (READ) 
+        // Obtenir un enregistrement en particulier dans la BD (READ) 
         app.get("/recette/:id", async (request, response) => {     
             console.log("Route GET /recette/:id");     
             try {         
