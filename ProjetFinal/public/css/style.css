@@ -85,7 +85,7 @@ body {
         align-items: center;
         border-radius: 2.5vh;
         height: 5vh;
-        width: 60vmin;
+        width: 45vw;
         background-color: rgba(255, 255, 255, 0.80);
     }
 
@@ -98,8 +98,8 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 10vh;
-        width: 10vh;
+        height: 7vh;
+        width: 7vh;
         border-radius: 5vh;
         background-color: rgba(255, 255, 255, 0.80);
     }
@@ -113,6 +113,10 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+
+    #bodyRecette .divConnexion {
+        margin-top: 10vh;
     }
 
         .btnCompte {
@@ -286,7 +290,7 @@ body {
     margin: 0vh 3vh;
     margin-top: -6vh;
 
-    height: 75vh;
+    height: 65vh;
 }
 
 .divConnexion .carteRecette .boiteDeroulante {
