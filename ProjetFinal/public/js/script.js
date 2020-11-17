@@ -56,7 +56,7 @@ async function recupererRecettes(){
 function listerRecettes(liste) {
     document.getElementById("divListeRecette").innerHTML = "";
     for(i = 0; i < liste.length; i++) {
-        document.getElementById("divListeRecette").innerHTML = "<div class=\"carteListe\" id = \"" + liste[i].id + "\" onclick=\"afficherDetailRecette(this.id)\"><img class=\"iconImage\" src= \"/img/recette.jpg\"><div class=\"nomDetailRecette\"><p>" + liste[i].nom + "<p><div class=\"detailRecette\"><p>portions</p><p>prix</p><p>temps</p></div></div></div>"
+        document.getElementById("divListeRecette").innerHTML += "<div class=\"carteListe\" id = \"" + liste[i].id + "\" onclick=\"afficherDetailRecette(this.id)\"><img class=\"iconImage\" src= \"/img/recette.jpg\"><div class=\"nomDetailRecette\"><p>" + liste[i].nom + "<p><div class=\"detailRecette\"><p>portions</p><p>prix</p><p>temps</p></div></div></div>"
     }
 }
 
@@ -132,7 +132,7 @@ async function recupererExercices(){
 function listerExercices(liste) {
     document.getElementById("divListeExercices").innerHTML = "";
     for(i = 0; i < liste.length; i++) {
-        document.getElementById("divListeExercices").innerHTML = "<div class=\"carteListe\" id = \"" + liste[i].id + "\" onclick=\"afficherDetailExercice(this.id)\"><img class=\"iconImage\" src= \"/img/Exercices/exercice2.jpg\"><div class=\"nomDetailRecette\"><p>" + liste[i].nom + "<p><div class=\"detailRecette\"><p>portions</p><p>prix</p><p>temps</p></div></div></div>"
+        document.getElementById("divListeExercices").innerHTML += "<div class=\"carteListe\" id = \"" + liste[i].id + "\" onclick=\"afficherDetailExercice(this.id)\"><img class=\"iconImage\" src= \"/img/Exercices/exercice2.jpg\"><div class=\"nomDetailRecette\"><p>" + liste[i].nom + "<p><div class=\"detailRecette\"><p>portions</p><p>prix</p><p>temps</p></div></div></div>"
     }
 }
 

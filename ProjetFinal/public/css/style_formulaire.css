@@ -1,0 +1,136 @@
+.divIconUtilisateur {
+    display: flex;
+    width: 80vmin;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 1vh;
+    font-family: Questrial;
+    font-size: 2.5vh;
+    color: rgba(255, 255, 255, 0.50);
+}
+
+.divFormulaire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12vh;
+}
+
+.divFormulaire div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.saisiTexteConnexion {
+    padding-left: 2.5vw;
+    padding-right: 5vw;
+    margin: 0 0 2.5vh;
+    height: 5vh;
+    border-radius: 3.5vh;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.80);
+    font-size: 4vmin;
+    color: rgba(70, 139, 96, 0.80);
+    width: 70vh;
+}
+
+.saisiTexteConnexion:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.saisiTexteConnexionRow {
+    padding-left: 2.5vw;
+    padding-right: 2vw;
+    margin: 0 0 2.5vh;
+    height: 5vh;
+    border-radius: 3.5vh;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.80);
+    font-size: 4vmin;
+    color: rgba(70, 139, 96, 0.80);
+}
+
+#province {
+    width: 33vh;
+}
+
+#pays {
+    width: 33vh;
+}
+
+#zipCode {
+    width: 33vh;
+}
+
+#ville {
+    width: 33vh;
+}
+
+.btnCreationCompte {
+    font-size: 5vmin;
+    margin: 2vh 2vw 0;
+    width: 25vw;
+    height: 7vh;
+    border-radius: 3.5vh;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.80);
+}
+
+.btnCreationCompte:focus {
+    outline: none;
+}
+
+#btnRetour {
+    color: rgba(255, 255, 255, 0.80);
+    background-color: rgba(70, 139, 96, 0.80);
+}
+
+#btnSupprimer {
+    color: rgba(255, 255, 255, 0.80);
+    color: rgba(139, 70, 70, 0.80);
+}
+
+#btnModifier {
+    color: rgba(255, 255, 255, 0.80);
+    background-color: rgba(70, 139, 96, 0.80);
+}
+
+@media (max-width:992px) {
+    .saisiTexteConnexion {
+        width: 50vh;
+    }
+    #province {
+        width: 24.5vh;
+    }
+    #pays {
+        width: 24.5vh;
+    }
+    #zipCode {
+        width: 24.5vh;
+    }
+    #ville {
+        width: 24.5vh;
+    }
+}
+
+@media(max-width: 450px) {
+    .saisiTexteConnexion {
+        width: 40vh;
+    }
+    #province {
+        width: 19.5vh;
+    }
+    #pays {
+        width: 19.5vh;
+    }
+    #zipCode {
+        width: 19.5vh;
+    }
+    #ville {
+        width: 19.5vh;
+    }
+}

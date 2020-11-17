@@ -1,50 +1,44 @@
+<link type="text/css" rel="stylesheet" href="css/style_formulaire.css" />
+
 <form action="/membre" method="post">
 
+    <div class="divIconUtilisateur">
+        <div id="membreConnecte">
+            <h1>Votre Profil</h1>
+        </div>
+        <div class="iconCompte"><i class="fas fa-user"></i></a>
+        </div>
+
+
+    </div>
     <div class="divFormulaire">
 
-        <div class="divChampUtil">
-            <input id="id" type="text" class="saisiTexteConnexion" disabled="disabled" />
-        </div>
-        <div class="divChampUtil">
-            <input class="saisiTexteConnexion" name="username" id="username" type="text">
-        </div>
-        <div class="divChampUtil">
-            <input placeholder="Nom" class="saisiTexteConnexion" name="nom" id="nom" type="text">
-        </div>
-        <div class="divChampUtil">
-            <input placeholder="Prénom" class="saisiTexteConnexion" name="prenom" id="prenom" type="text">
-        </div>
-        <div class="divChampUtil">
-            <input placeholder="Téléphone" class="saisiTexteConnexion" name="telephone" id="telephone" type="phone">
-        </div>
-        <div class="divChampUtil">
-            <input placeholder="Adresse Postale" class="saisiTexteConnexion" name="adresse" id="adresse" type="text">
+        <input id="id" type="text" class="saisiTexteConnexion" disabled="disabled" />
+
+        <input class="saisiTexteConnexion" name="username" id="username" type="text">
+
+        <input placeholder="Nom" class="saisiTexteConnexion" name="nom" id="nom" type="text">
+
+        <input placeholder="Prénom" class="saisiTexteConnexion" name="prenom" id="prenom" type="text">
+
+        <input placeholder="Téléphone" class="saisiTexteConnexion" name="telephone" id="telephone" type="phone">
+
+        <input placeholder="Adresse Postale" class="saisiTexteConnexion" name="adresse" id="adresse" type="text">
+
+        <div class="divChampFormulaire">
+            <input placeholder="Code postal" class="saisiTexteConnexionRow" name="zipCode" id="zipCode" type="text">
+            <input placeholder="Ville" class="saisiTexteConnexionRow" name="ville" id="ville" type="text ">
         </div>
         <div class="divChampFormulaire">
-            <input placeholder="Code postal" class="saisiTexteConnexion" name="zipCode" id="zipCode" type="text">
-            <input placeholder="Ville" class="saisiTexteConnexion" name="ville" id="ville" type="text ">
-        </div>
-        <div class="divChampFormulaire">
-            <input placeholder="Province" class="saisiTexteConnexion" name="province" id="province" type="text ">
-            <input placeholder="Pays" class="saisiTexteConnexion" name="pays" id="pays" type="text ">
-        </div>
-        <div class="divChampUtil">
-            <input class="saisiTexteConnexion" name="email" id="email" type="email">
-        </div>
-        <div class="divChampUtil">
-            <input class="saisiTexteConnexion" name="password" id="password" type="password">
+            <input placeholder="Province" class="saisiTexteConnexionRow" name="province" id="province" type="text ">
+            <input placeholder="Pays" class="saisiTexteConnexionRow" name="pays" id="pays" type="text ">
         </div>
 
-        <div class="divChampUtil">
-            <input placeholder="Travail" class="saisiTexteConnexion" name="travail" id="travail" type="text ">
-        </div>
-        <div class="divChampUtil">
-            <input placeholder="Cellulaire" class="saisiTexteConnexion" name="cellulaire" id="cellulaire" type="phone">
-        </div>
-        <div class="divChampUtil">
-            <input placeholder="Entreprise" class="saisiTexteConnexion" name="entreprise" id="entreprise" type="text">
-        </div>
+        <input class="saisiTexteConnexion" name="email" id="email" type="email">
+        <input class="saisiTexteConnexion" name="password" id="password" type="password">
+
         <div>
+            <button id="btnRetour" href="/home93e8.html" type="submit" class="btnCreationCompte">Retour</button>
             <button id="btnModifier" onclick="modifierUnMembre(document.getElementById('id').value)" type="submit" class="btnCreationCompte">Modifier</button>
             <button id="btnSupprimer" onclick="supprimerUnMembre(document.getElementById('id').value)" class="btnCreationCompte">Supprimer</button>
         </div>
