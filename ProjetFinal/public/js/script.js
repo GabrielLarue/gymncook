@@ -7,9 +7,9 @@
 function changeCibleNavigation() {
 
     if( document.getElementById("navigationRecettesPub")) {
-        document.getElementById("navigationAcceuil").innerHTML = "<a id=\"navigationExercicesPub\" href=\"/pageExercices\"><p>Parcourir nos exercices</p></a>";
+        document.getElementById("navigationAcceuil").innerHTML = "<a id=\"navigationExercicesPub\" href=\"/pageExercices\"><p>Parcourir nos <b class=\"texte-exercices\">exercices<b></p></a>";
     }else {
-        document.getElementById("navigationAcceuil").innerHTML = "<a id=\"navigationRecettesPub\" href=\"/pageRecettes\"><p>Parcourir nos recettes</p></a>";
+        document.getElementById("navigationAcceuil").innerHTML = "<a id=\"navigationRecettesPub\" href=\"/pageRecettes\"><p>Parcourir nos <b class=\"texte-recettes\">recettes<b></p></a>";
     }
     
 }

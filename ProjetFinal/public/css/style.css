@@ -3,51 +3,6 @@
         src: url("../fonts/Questrial-Regular.ttf");
     }
 
-    @keyframes continuer{
-        0% {
-            background-color: rgba(70, 139, 96, 0.80);
-            color: rgba(255, 255, 255, 0.80);
-        }
-        50% {
-            background-color: rgba(255, 255, 255, 0.80);
-            color: rgba(70, 139, 96, 0.80);
-        }
-        100% {
-            background-color: rgba(70, 139, 96, 0.80);
-            color: rgba(255, 255, 255, 0.80);
-        }
-    }
-
-    @keyframes continuer2{
-        0% {
-            background-color: rgba(255, 255, 255, 0.80);
-            color: rgba(70, 139, 96, 0.80);
-        }
-        50% {
-            background-color: rgba(70, 139, 96, 0.80);
-            color: rgba(255, 255, 255, 0.80);
-        }
-        100% {
-            background-color: rgba(255, 255, 255, 0.80);
-            color: rgba(70, 139, 96, 0.80);
-        }
-    }
-    
-    @keyframes annuler{
-        0% {
-            background-color:rgba(255, 255, 255, 0.80);
-            color: rgba(139, 70, 70, 0.80);
-        }
-        50% {
-            background-color: rgba(139, 70, 70, 0.80);
-            color: rgba(255, 255, 255, 0.80);
-        }
-        100% {
-            background-color: rgba(255, 255, 255, 0.80);
-            color: rgba(139, 70, 70, 0.80);
-        }
-    }
-
 body {
     margin: 0;
     height: 100vh;
@@ -57,6 +12,14 @@ body {
     justify-content: center;
     align-items: center;
     background-color: black;
+}
+
+.texte-recettes{
+    color: #468B60;
+}
+
+.texte-exercices{
+    color: #ffbb00;
 }
 
 #bodyRecette {
@@ -93,6 +56,10 @@ body {
             background-color: rgba(255, 255, 255, 1);
         }
 
+    #membreConnecte {
+        font-weight: bold;
+    }
+
     .iconCompte {
         margin-left: 5vmin;
         display: flex;
@@ -101,8 +68,12 @@ body {
         height: 7vh;
         width: 7vh;
         border-radius: 5vh;
-        background-color: rgba(255, 255, 255, 0.80);
+        background-color: rgba(255, 187, 0 ,0.8);
     }
+
+        #bodyRecette .iconCompte {
+            background-color: rgba(255, 255, 255, 0.80);
+        }
 
         .iconCompte:hover {
             background-color: rgba(255, 255, 255, 1);
@@ -135,21 +106,13 @@ body {
         }
 
         #btnConnexion {
-            background-color: #468B60;
-            color: rgba(255, 255, 255, 0.80);
-        }
-
-        #btnConnexion:focus {
-            animation: continuer 300ms;
+            background-color: rgba(255, 187, 0 ,0.8);
+            font-weight: bold;
         }
 
         #btnInscription {
-            background-color: white;
-            color: rgba(70, 139, 96, 0.80);
-        }
-
-        #btnInscription:focus {
-            animation: continuer2 300ms;
+            background-color: #468B60;
+            font-weight: bold;
         }
 
     .divNavigationHaut {
@@ -182,9 +145,12 @@ body {
             padding-left: 3vmin;
         }
 
+        #bodyRecette .iconCompte i {
+            color: rgba(70, 139, 96, 0.80);
+        }
+
         .iconCompte i {
-            color: #468B60;
-            opacity: 0.8;
+            color: black;
             font-size: 3.5vh;
         }
 
@@ -363,7 +329,6 @@ body {
     background-color: rgba(255, 255, 255, 0.80);
     
     font-size: 4vmin;
-    color: rgba(70, 139, 96, 0.80);
 }
 
 .saisiTexteConnexion:focus {
@@ -395,25 +360,20 @@ body {
 #btnContinuer {
     color: rgba(255, 255, 255, 0.80);
     background-color: rgba(70, 139, 96, 0.80);
+
+    font-weight: bold;
 }
 
     form #btnContinuer {
         background-color: rgba(70, 139, 96, 0.80);
     }
 
-#btnContinuer:focus {
-    animation: continuer 300ms;
-}
-
 #btnAnnuler {
     color: rgba(255, 255, 255, 0.80);
-    color: rgba(139, 70, 70, 0.80);
-}
+    background-color: rgba(139, 70, 70, 0.80);
 
-#btnAnnuler:focus {
-    animation: annuler 300ms;
+    font-weight: bold;
 }
-
 
 .divChampUtil {
     display: flex;

@@ -8,16 +8,16 @@
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
 
     <script src="js/script.js"></script>
+    <script src="index.js"></script>
     <script src="https://kit.fontawesome.com/81c5aee0d0.js" crossorigin="anonymous"></script>
 </head>
 <body id="bodyRecette" onload="recupererRecettes()">
-
     <div class="divNavigationHaut">
         <div class="divTexte">
             <i class="fas fa-search"></i>
             <input id="texteUtilisateurRecherche" type="text" onkeyup="rechercherSelection()">
         </div>
-        <div class="iconCompte">
+        <div onclick="profilMembre('/html/profilMembre.html')" class="iconCompte">
             <i class="fas fa-user"></i>
         </div>
         <div class="iconCompte">

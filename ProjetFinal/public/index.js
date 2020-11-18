@@ -290,7 +290,12 @@ function profilMembre(url) {
           document.getElementById("password").value = objJSON.password;
       });
   });
-    document.getElementById("voirHtml").innerHTML = profil; });}
+  if(document.getElementById("voirHtml")){
+    document.getElementById("voirHtml").innerHTML = profil; 
+  }else if(document.getElementById("bodyRecette")){
+    document.getElementById("bodyRecette").innerHTML = profil;
+  }
+});}
 
 
 function modifierUnMembre(id) {
