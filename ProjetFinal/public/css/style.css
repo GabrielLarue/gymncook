@@ -196,7 +196,7 @@ body {
             .nomDetailRecette {
                 color: #468B60;
                 font-size: 4vmin;
-                margin-left: 5vmin;
+                margin-left: 2vmin;
                 opacity: 0.8;
             }
 
@@ -245,8 +245,13 @@ body {
 .divConnexion .divFlexColumn {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
+}
+
+.divConnexion .divFlexColumn div{
+    display: flex;
+    flex-direction: column;
 }
 
 .divConnexion .carteRecette {
@@ -267,8 +272,9 @@ body {
 
 .divConnexion .headerRecette {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
     margin-top: 8vh;
     color: rgb(70, 139, 96);
@@ -278,12 +284,18 @@ body {
 
 .divConnexion .bodyRecette {
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
 
     color: rgb(70, 139, 96);
     font-family: Questrial;
     padding: 2vw;
+    font-size: 2vh;
+}
+
+.divConnexion .bodyRecette h3 {
+    font-weight: normal;
     font-size: 2vh;
 }
 
@@ -293,15 +305,20 @@ body {
 }
 
 .headerRecette h1 {
-    margin-left: 2vw;
-    margin-bottom: 0;
-    font-size: 4vh;
+    text-align: center;
+    margin-bottom: 2vh;
+    font-size: 3vh;
 }
 
 .headerRecette h3 {
     margin: 0vw 1vw;
     opacity: .8;
     font-size: 2vh;
+}
+
+#listeIngredients {
+    font-size: 2vh;
+    opacity: 0.8;
 }
 
 .texteConnexion {

@@ -203,6 +203,10 @@ document.getElementById("entraineurConnecte").innerHTML = objJSON.username;
 });
 });
 
+function annulerInscription() {
+  location.reload();
+}
+
 function connexion(url) { 
     fetch(url) 
     .then(function(reponse){ 

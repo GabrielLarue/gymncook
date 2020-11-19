@@ -20,6 +20,14 @@ function changeCibleNavigation() {
 class Recette {
     id;
     nom;
+    categorie;
+    ingredients;
+    instructions;
+    image;
+    portions;
+    cuisson;
+    preparation;
+    temp = this.cuisson + this.preparation;
 }
 
 //===========================================
@@ -40,6 +48,13 @@ async function recupererRecettes(){
                 let recette = new Recette();
                 recette.id = data[i]._id
                 recette.nom = data[i].nom
+                recette.categorie = data[i].categorie
+                recette.ingredients = data[i].ingredients
+                recette.instructions = data[i].instructions
+                recette.image = data[i].cheminImage
+                recette.portions = data[i].portions
+                recette.cuisson = data[i].cuisson
+                recette.preparation = data[i].preparation
 
                 listeRecettes.push(recette)
             }
@@ -56,7 +71,7 @@ async function recupererRecettes(){
 function listerRecettes(liste) {
     document.getElementById("divListeRecette").innerHTML = "";
     for(i = 0; i < liste.length; i++) {
-        document.getElementById("divListeRecette").innerHTML += "<div class=\"carteListe\" id = \"" + liste[i].id + "\" onclick=\"afficherDetailRecette(this.id)\"><img class=\"iconImage\" src= \"/img/recette.jpg\"><div class=\"nomDetailRecette\"><p>" + liste[i].nom + "<p><div class=\"detailRecette\"><p>portions</p><p>prix</p><p>temps</p></div></div></div>"
+        document.getElementById("divListeRecette").innerHTML += "<div class=\"carteListe\" id = \"" + liste[i].id + "\" onclick=\"afficherDetailRecette(this.id)\"><img class=\"iconImage\" src= \"/" + liste[i].image + "\"><div class=\"nomDetailRecette\"><p>" + liste[i].nom + "<p><div class=\"detailRecette\"><p>" + liste[i].portions + " portions</p></div></div></div>"
     }
 }
 
@@ -67,7 +82,11 @@ function listerRecettes(liste) {
 function afficherDetailRecette(id) {
     for(i = 0; i < listeRecettes.length; i++) {
         if(id == (listeRecettes[i].id)) {
-            document.getElementById("bodyRecette").innerHTML = "<div class=\"divNavigationHaut\"><div id=\"membreConnecte\"> </div><div class=\"iconCompte\"><a onclick=\"profilMembre('/html/profilMembre.html')\"><i class=\"fas fa-user\"></i></a></div><div class=\"iconCompte\"><a onclick=\"planMembre()\"><i class=\"fas fa-clipboard\"></i></a></div></div><div class=\"divConnexion\"><div class=\"carteRecette\"><div class=\"boiteDeroulante\"><div class=\"headerRecette\"><img class=\"iconImage\" src= \"img/recette.jpg\"><div class=\"divFlexColumn\"><h1>" + listeRecettes[i].nom + "</h1><div><h3>Portions</h3> <h3>Temps</h3><h3>Calorie</h3></div></div></div><div class=\"bodyRecette\"><h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam consequatur officiis repellat corrupti dolorum, ipsa possimus. Incidunt mollitia perferendis, molestiae non expedita explicabo dolorem unde, aliquid doloremque dolores laudantium? Cupiditate? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint id maxime architecto at accusamus debitis dignissimos, numquam est eum consectetur eius iusto quibusdam modi! Iure tenetur ea commodi tempora animi! <br> <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam consequuntur, illum quaerat fugiat doloremque porro impedit dolor, voluptas aliquam molestias ut possimus animi quae. Aliquam rem harum ullam laudantium inventore.</h3></div></div></div></div><div class=\"divNavigation\"><a id=\"navigationRecettesPub\" href=\"/pageRecettes\"><p id=\"navigationRecettesPub\">Retour</p></div></a>"
+            document.getElementById("bodyRecette").innerHTML = "<div class=\"divNavigationHaut\"><div id=\"membreConnecte\"> </div><div class=\"iconCompte\"><a onclick=\"profilMembre('/html/profilMembre.html')\"><i class=\"fas fa-user\"></i></a></div><div class=\"iconCompte\"><a onclick=\"planMembre()\"><i class=\"fas fa-clipboard\"></i></a></div></div><div class=\"divConnexion\"><div class=\"carteRecette\"><div class=\"boiteDeroulante\"><div class=\"headerRecette\"><img class=\"iconImage\" src= \"" + listeRecettes[i].image + "\"><div class=\"divFlexColumn\"><h1>" + listeRecettes[i].nom + "</h1><div><h3>Portions: " + listeRecettes[i].portions + "</h3> <h3>Préparation: " + listeRecettes[i].preparation + " min</h3><h3>Cuisson: " + listeRecettes[i].cuisson + " min</h3></div></div></div><div class=\"bodyRecette\"><h3 id=\"listeIngredients\"></h3><h3>" + listeRecettes[i].instructions + "</h3></div></div></div></div><div class=\"divNavigation\"><a id=\"navigationRecettesPub\" href=\"/pageRecettes\"><p id=\"navigationRecettesPub\">Retour</p></div></a>"
+            var tabIngredients = (listeRecettes[i].ingredients).split(",");
+            for(i = 0; i < tabIngredients.length; i++){
+                document.getElementById("listeIngredients").innerHTML += "<br>- " + tabIngredients[i];
+            }
         }
     }
 }
